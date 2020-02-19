@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +11,9 @@
    <title>Sign Up</title>
 </head>
 <body>
-<form action="user-add.php" method="POST">
-		<label>Name:</label>
+    <?php   if(isset($_SESSION['msg'])) echo $_SESSION['msg']; ?>
+<form id="signupfrm" action="user-add.php" method="POST">
+	  <label>Name:</label>
       <input type="text" name="user_name" required> <br>
       
       <label>Email:</label>
@@ -16,11 +21,14 @@
       
       <label>Password:</label>
       <input type="password" name="password" min="1" max="50" required> <br>
+        <p>
+            May contain letter and numbers.<br/>
+            Must contain at least 1 number and 1 letter.<br/>
+            May contain any of these characters: !@#$%.<br/>
+            Must be 6-20 characters.<br/>
+        </p>
 
-      <label>Profile</label>
-      <input type="file" name="profile"> <br>
-
-		<input type="submit"	value="Sign Up">
-	</form>
+		<input type="submit" value="Sign Up">
+    </form>
 </body>
 </html>

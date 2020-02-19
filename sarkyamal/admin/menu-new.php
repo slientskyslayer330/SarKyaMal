@@ -9,13 +9,10 @@
 		<label>Menu Name:</label>
       <input type="text" name="menu_name" required> <br>
       
-      <label>Contact Phone:</label>
+      <label>Menu Type:</label>
       <input type="text" name="menu_type" required> <br>
       
-      <label>Location:</label>
-      <input type="num" name="availability" min="0" max="5" required> <br>
-
-		<input type="submit"	value="Add Menu">
+	   <input type="submit"	value="Add Menu">
 	</form>
 </body>
 </html>

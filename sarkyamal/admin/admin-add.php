@@ -13,6 +13,4 @@
 	if($run) {
 		header("location: admin-index.php");
 	}
-	// 
-
 ?>

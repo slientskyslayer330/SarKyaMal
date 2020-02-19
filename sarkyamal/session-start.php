@@ -2,15 +2,16 @@
    session_start();
    include("admin/config/connect.php");
 
-   if(isset($_POST['login'])) {
+   if(isset($_POST['login'])) 
+   {
 
       $username=$_POST['username'];
-      $password=$_POST['password'];
-
-      $sql="SELECT * FROM users WHERE user_name='$username' AND password='$password'";
+      $password=md5($_POST['password']);
+      
+      $sql="SELECT * FROM users WHERE user_name='$username' AND password='$password' AND active='1'";
       $select=mysqli_query($conn, $sql);
 
-      $count=mysqli_num_rows($select);
+      $count=mysqli_num_rows($select); echo $count;
 
       if($count==1) {
          $data=mysqli_fetch_array($select);
@@ -21,7 +22,7 @@
       } else {
          echo" <script> 
                   alert('incorrect username or password!'); 
-                  window.location.assign('login.php');
+                  window.location.assign('user-login.php');                  
                </script>";
          
       }

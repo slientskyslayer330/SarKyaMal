@@ -16,8 +16,8 @@
 		<th>ID</th>
         <th>Menu</th>
         <th>Type</th>
-		<th>Photo</th>
-        <th>Availability</th>
+		<th>Availability</th>
+        <th>Photo</th>
 		<th></th>
 		<th></th>
 	</tr>

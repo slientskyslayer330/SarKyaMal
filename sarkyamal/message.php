@@ -7,16 +7,6 @@
    <title>Document</title>
 </head>
 <body>
-   <nav>
-      <ul>
-         <li><a href="#"></a> </li>
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-      </ul>
-   </nav>
-   
+   <p>Your account has been made, <br /> please verify it by clicking the activation link that has been send to your email.</p>
 </body>
 </html>
