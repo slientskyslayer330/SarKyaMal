@@ -1,0 +1,1 @@
+<?php $conn = mysqli_connect("localhost", "root", "keOs9K4L3b4g", "sarkyamaldb" ); ?>
