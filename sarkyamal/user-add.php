@@ -3,7 +3,7 @@
 
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
-	use PHPMailer\PHPMailer\Exception;
+	
 	include("admin/config/connect.php");
 	include("admin/config/auto-id.php");
 	require 'vendor/autoload.php';

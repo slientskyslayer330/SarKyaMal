@@ -12,7 +12,7 @@ session_start();
 </head>
 <body>
     <?php   if(isset($_SESSION['msg'])) echo $_SESSION['msg']; ?>
-<form id="signupfrm" action="user-add.php" method="POST">
+<form id="signupform" action="user-add.php" method="POST">
 	  <label>Name:</label>
       <input type="text" name="user_name" required> <br>
       
