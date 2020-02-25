@@ -1,0 +1,226 @@
+body, html {
+   padding: 0;
+   margin: 0;
+   overflow-x: hidden;
+   max-width: 100%;
+}
+
+.row {
+   margin: 0;
+   padding: 0;
+}
+
+#topbar {
+   background:#CCCACA;
+   height: 100px;
+   width: 100%;
+   position: fixed;
+	top: 0px;
+	z-index: 1;
+}
+
+#logo-img {
+   display: inline-block;
+   padding: 25px 25px 25px 30px;
+}
+
+#logo-img img {
+   width: 32px;
+}
+
+#logo-word {
+   display: inline-block;
+   vertical-align: middle;
+}
+
+#logo-word h1 {
+   font-family: 'Billionaire Grunge';
+   font-size: 27px;
+   letter-spacing: 0.05em;
+   margin: 0;
+}
+
+#toggle {
+   display: inline-block;
+	padding: 33px;
+	position: absolute;
+	right: 0px;
+	cursor: pointer;
+}
+
+#toggle div {
+
+	width: 20px;
+	height: 1.5px;
+	margin: 4px;
+	background: #000;
+	transition: all 0.3s ease;
+}
+
+.toggle-animation .line1 {
+	transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.toggle-animation .line2 {
+	opacity: 0;
+}
+
+.toggle-animation .line3 {
+	transform: rotate(45deg) translate(-4px, -4px);
+}
+
+#white-space {
+   position: fixed;
+   top: 82px;
+   z-index: 2;
+   height: 36px;
+   width: 100%;
+   background: #fff;
+   border-radius: 22px;
+}
+
+nav {
+   position: fixed;
+   display: block;
+   z-index: 9999;
+	top: 82px;
+	right: -10px;
+	padding: 0px;
+	background: #CCCACA;	
+	width: 80%;
+	transform: translateX(100%);
+   transition: 0.5s ease;
+   height: 100%;
+}
+
+.nav-animation {
+	transform: translateX(0%);
+}
+
+nav a {
+	/* text-transform: uppercase; */
+	font-family: 'Proxima Nova Alt', sans-serif;
+	color: #000;
+	font-size: 13px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	padding: 15px 40px;
+	/* border-bottom: 0.5px solid #2f2e41; */
+}
+
+#bottom-nav {
+   position: fixed;
+   top: 300px;
+}
+
+.button-link {
+   display: inline;
+   border: 1px solid #000;
+   border-radius: 18px;
+   padding: 9px 18px;
+   margin-left: 40px;
+}
+
+.focus-button {
+   background: #000;
+   color: #fff;
+}
+
+#first-nav {
+   padding-top: 30px;
+}
+
+nav a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+/* -------------------------------------nav ends here */
+
+#body {
+   position: absolute;
+   top: 120px;
+   font-family: 'Proxima Nova Regular';
+   font-size: 13px;
+   height: 80%;
+   width: 100%;
+}
+
+#page-title {
+   margin: 0px 60px 20px;
+
+}
+
+#signup-form, #login-form {
+   margin-left: 60px;
+}
+
+.content {
+   width: 82%;
+   margin: 20px auto;
+}
+
+input {
+   border: 1px solid #000;
+   width: 260px;
+   height: 36px;
+   border-radius: 18px;
+   display: block;
+   margin-bottom: 20px;
+   padding: 0px 20px;
+}
+
+.search-bar {
+   width: 100%;
+   text-align: center;
+}
+
+.search-bar form input[type=text] {
+   display: inline-block;
+   width: 70%;
+}
+
+input[type=submit] {
+   margin-top: 40px;
+   margin-bottom: 10px;
+}
+
+.hidden-button {
+   position: absolute;
+   left: -99999px;
+}
+
+label {
+   display: block;
+}
+
+.right {
+   float: right;
+}
+
+#about-us {
+   margin: 0 40px;
+}
+
+#about-us p {
+   text-align: justify;
+   text-justify: inter-word;
+}
+
+/* ----------------------------------------restuarant starts here */
+.list {
+   list-style-type: none;
+   padding: 13px 0;
+   border-bottom: 1px solid #000;
+}
+
+.list a {
+   text-decoration: none;
+   color: #000;
+}
+
+.list a:hover {
+   font-size: 130%;
+}

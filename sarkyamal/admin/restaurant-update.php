@@ -1,5 +1,5 @@
 <?php 
-   include("config/connect.php"); 
+   include("../config/connect.php"); 
 
    $restaurant_id=$_POST['restaurant_id'];
    $restaurant_name=$_POST['restaurant_name'];

@@ -1,6 +1,6 @@
 <?php 
-	include("config/connect.php");
-	include("config/auto-id.php");
+	include("../config/connect.php");
+	include("../config/auto-id.php");
 
 	$menu_id=autoID("menus", "menu_id", "M", 3);
 	$menu_name=$_POST['menu_name'];

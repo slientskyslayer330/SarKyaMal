@@ -1,5 +1,5 @@
 <?php  
-	include("config/connect.php");
+	include("../config/connect.php");
 	$select=mysqli_query($conn, "SELECT * FROM menus");
 ?>
 

@@ -1,5 +1,5 @@
 <?php 
-   include("config/connect.php"); 
+   include("../config/connect.php"); 
 
     $admin_id  =$_POST['admin_id'];
     $admin_name=$_POST['admin_name'];
