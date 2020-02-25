@@ -4,7 +4,7 @@ function autoID($table, $col, $prefix, $digits)
 	include("connect.php");
 	$sql="SELECT ".$col." FROM ".$table." ORDER BY ".$col." DESC";	
 	
-	$select = mysqli_query($conn, $sql); if($select) echo "run";
+	$select = mysqli_query($conn, $sql); 
 	$count=mysqli_num_rows($select);
 	$data = mysqli_fetch_array($select);		
 	
