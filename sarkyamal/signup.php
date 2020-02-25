@@ -20,7 +20,7 @@ session_start();
     </section>
 
     <section id="signup-form">
-    <form action="#" method="post">
+    <form action="user-add.php" method="post">
 	   <label>Userame:</label> 
        <input type="text" name="user_name" required> 
       
