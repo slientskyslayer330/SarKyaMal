@@ -1,6 +1,6 @@
 <?php 
-	include("config/connect.php");
-	include("config/auto-id.php");
+	include("../config/connect.php");
+	include("../config/auto-id.php");
 
 	$admin_id  =autoID("admins", "admin_id", "a", 2);
 	$admin_name=$_POST['admin_name'];

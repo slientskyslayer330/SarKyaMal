@@ -1,5 +1,5 @@
 <?php 
-	include("config/connect.php");
+	include("../config/connect.php");
 
 	$id=$_GET['id'];
 	$sql = "DELETE FROM restaurants WHERE restaurant_id='$id'";
