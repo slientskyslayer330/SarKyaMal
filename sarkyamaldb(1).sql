@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2020 at 08:53 AM
+-- Generation Time: Feb 25, 2020 at 06:13 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -68,7 +68,7 @@ CREATE TABLE `orders` (
   `user_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `total` int(11) NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `status` varchar(12) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1151,6 +1151,7 @@ CREATE TABLE `restaurant_menu` (
   `restaurant_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `menu_id` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
   `rating` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -1158,9 +1159,9 @@ CREATE TABLE `restaurant_menu` (
 -- Dumping data for table `restaurant_menu`
 --
 
-INSERT INTO `restaurant_menu` (`rm_id`, `restaurant_id`, `menu_id`, `price`, `rating`) VALUES
-('P0001', 'R01', 'M001', 56465, 0),
-('P0002', 'R03', 'M001', 89979, 0);
+INSERT INTO `restaurant_menu` (`rm_id`, `restaurant_id`, `menu_id`, `price`, `description`, `rating`) VALUES
+('P0001', 'R01', 'M001', 56465, '', 0),
+('P0002', 'R03', 'M001', 89979, '', 0);
 
 -- --------------------------------------------------------
 
@@ -1192,18 +1193,6 @@ CREATE TABLE `users` (
   `hash` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `user_name`, `email`, `password`, `profile`, `remaining_balance`, `hash`, `active`) VALUES
-('U00003', 'May', 'mmmpk2732@gmail.com', 'c5a96af72cb33c7d182b50e02886f81c', '', 0, '8d34201a5b85900908db6cae92723617', 1),
-('U00004', 'Khine', 'kakakellie.9@gmail.com', 'c5a96af72cb33c7d182b50e02886f81c', '', 0, '2823f4797102ce1a1aec05359cc16dd9', 1),
-('U00005', 'tyyy', 'slientskyslayer@gmail.com', '9c976cca3a647b136a665d1710e892e5', '', 0, '2d6cc4b2d139a53512fb8cbb3086ae2e', 0),
-('U00006', 'yttt', 'slientskyslayer330@gmail.com', '9c976cca3a647b136a665d1710e892e5', '', 0, 'd07e70efcfab08731a97e7b91be644de', 0),
-('U00007', 'tyyyui', 'winmawmikku@gmail.com', '9c976cca3a647b136a665d1710e892e5', '', 0, 'fc3cf452d3da8402bebb765225ce8c0e', 0),
-('U00008', 'Kelly', 'kakakellie.9@gmail.com', 'c2a99b3efaca2dd1df152be705792481', '', 0, 'd1f255a373a3cef72e03aa9d980c7eca', 1);
 
 --
 -- Indexes for dumped tables
