@@ -96,6 +96,7 @@
 <body>
 	<?php 
 		include('nav.php'); 
+		
 		echo $msg;
 	?>
 	
