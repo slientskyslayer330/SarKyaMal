@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,20 +27,26 @@
          <nav id="nav">
             <a href="index.php" id="first-nav">Home</a>
             <a href="restaurants.php">Restuarants</a>
-            <a href="#">Menus</a>
+            <a href="menus.php">Menus</a>
             <a href="#">Location Guide</a>
             <a href="aboutus.php">About Us</a>
+            <?php if(isset($_SESSION['user_id'])){ ?>
+               <a href="profile.php">Profile</a>
+               <a href="order-history.php">Order History</a>
+            <?php } ?>
             <div id="bottom-nav">
-               <a href="#" class="button-link">Login</a>
+            <?php if(!isset($_SESSION['user_id'])){ ?>
+               <a href="login.php" class="button-link">Login</a>
                <a href="signup.php" class="button-link focus-button">Sign up</a>
+            <?php } else { ?>
+               <a href="logout.php" class="button-link focus-button">Log out</a>
+            <?php } ?>
             </div>
          </nav>
       </div>
 
       <div id="white-space"></div>
    </section>
-   
-   
 
    <script src="config/animate.js"></script>
 </body>

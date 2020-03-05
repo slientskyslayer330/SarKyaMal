@@ -1,5 +1,5 @@
 <?php 
-	include("config/connect.php");
+	include("../config/connect.php");
 
 	$sql= "SELECT * FROM restaurants";
 	$result=mysqli_query($conn, $sql); 
@@ -49,6 +49,9 @@
 
 	  <label>Price: </label>
 	  <input type="number" name="price" required> <br>
+	  
+	  <label>Description:</label> <br>
+	  <textarea name="description" cols="30" rows="5"></textarea> <br>
       
       <input type="submit" value="Add Menu for Restaurant">
 	</form>

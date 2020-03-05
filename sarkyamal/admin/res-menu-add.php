@@ -5,10 +5,11 @@
 	$rm_id=autoID("restaurant_menu", "rm_id", "P", 4);
 	$restaurant_id=$_POST['restaurant_id'];
 	$menu_id=$_POST['menu_id'];
-   $price=$_POST['price'];
+	$price=$_POST['price'];
+	$description=$_POST['description'];
    $rating=0;
 
-	echo $sql="INSERT INTO restaurant_menu VALUES ('$rm_id', '$restaurant_id', '$menu_id', '$price', '$rating')";
+	echo $sql="INSERT INTO restaurant_menu VALUES ('$rm_id', '$restaurant_id', '$menu_id', '$price', '$description', '$rating')";
 	$run=mysqli_query($conn, $sql);
 	
 	if($run) {

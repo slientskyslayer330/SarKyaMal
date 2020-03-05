@@ -3,11 +3,7 @@
 
    if(isset($_POST['keyword'])) {
       $keyword=$_POST['keyword'];
-      $select=mysqli_query($conn, "SELECT * FROM restaurants WHERE restaurant_name LIKE %$keyword%"); 
-
-      if(!$select) {
-         echo "Yes";
-      }
+      $select=mysqli_query($conn, "SELECT * FROM restaurants WHERE restaurant_name LIKE '%$keyword%' "); 
    } else {
       $select=mysqli_query($conn, "SELECT * FROM restaurants");   
    }
@@ -24,9 +20,10 @@
    <title>Restaurants</title>
 </head>
 <body>
-   <?php //include('nav.php'); ?>
-
-   
+   <?php 
+      include('nav.php'); 
+      include('cart.php');
+   ?>
 
    <section id="body"> 
       <div id="page-title">
@@ -43,7 +40,7 @@
       <div class="content">
          <?php for ($i=0; $i < $count; $i++) : $data=mysqli_fetch_array($select); ?>
          <ul class="list">
-            <li><a href="#"><?php echo $data['restaurant_name'];?></a></li>
+            <li><a href="restaurant.php?rid=<?php echo $data['restaurant_id'];?>"><?php echo $data['restaurant_name'];?></a></li>
          </ul>
          <?php endfor; ?>
       </div>

@@ -13,7 +13,7 @@ session_start();
 <body>
     <?php include('nav.php'); ?>
 
-    <section id="body">
+<section id="body">
 
     <section id="page-title">
         <h2>Sign Up</h2>
@@ -22,27 +22,35 @@ session_start();
     <section id="signup-form">
     <form action="user-add.php" method="post">
 	   <label>Userame:</label> 
-       <input type="text" name="user_name" required> 
+       <input type="text" name="user_name" onfocus="hide(this)" required> 
       
        <label>Email:</label> 
-       <input type="email" name="email" required> 
+       <input type="email" name="email" onfocus="hide(this)" required> 
       
        <label>Password:</label>  
-       <input type="password" name="password" min="1" max="50" required> 
-       <!-- <p>
-            May contain letter and numbers.<br/>
+       <input type="password" name="password" onfocus="show(this)" min="1" max="50" required> 
+       <span id="psw">
             Must contain at least 1 number and 1 letter.<br/>
-            May contain any of these characters: !@#$%.<br/>
+            May contain special characters: !@#$%.<br/>
             Must be 6-20 characters.<br/>
-       </p> -->
+       </span> 
 
        <input class="focus-button" type="submit" value="Sign Up">
-       <small>Already have an accoun? <a href="login.php">Login</a> here.</small>
+       <small class="pd-left-40">Already have an accoun? <a href="login.php">Login</a> here.</small>
     </form>
     </section>
 
     
-    </section>
+</section>
 
+<script>
+    function hide() {
+        document.getElementById('psw').style.display ='none';
+    }
+
+    function show() {
+        document.getElementById('psw').style.display ='inline-block';
+    }
+</script>
 </body>
 </html>

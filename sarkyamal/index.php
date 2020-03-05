@@ -7,8 +7,16 @@
    <title>Home</title>
 </head>
 <body>
-   <?php include('nav.php'); ?>
-
+<section id="body">
+   <?php 
+      include('nav.php'); 
+      include('cart.php');
+   ?>
+   
+   <div id="page-title">
+      <h2>This is index!</h2>
+   </div>
+</section>
    
 </body>
 </html>

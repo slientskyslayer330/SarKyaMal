@@ -1,1 +1,1 @@
-<?php $conn = mysqli_connect("localhost", "root", "UQzbwW4KQq8GPq", "sarkyamaldb" ); ?>
+<?php $conn = mysqli_connect("localhost", "root", "", "sarkyamaldb" ); ?>
