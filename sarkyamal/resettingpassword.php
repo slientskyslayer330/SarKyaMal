@@ -52,7 +52,7 @@ if(isset($_POST['email']) && !empty($_POST['email']))
                         Recently a request was submitted to reset a password for your account. If this was a mistake, just ignore this email and nothing will happen.<br />
                     	
                     	Please click this link to reset your account:<br />
-                    	http://34.87.196.86//sarkyamal/passwordreset.php?email=' . $email . '&hash=' . $hash . '<br />
+                    	https://sarkyamal.000webhostapp.com/passwordreset.php?email=' . $email . '&hash=' . $hash . '<br />
                     	<br />
 					   '; 
 					   $mail->SMTPOptions = array(
