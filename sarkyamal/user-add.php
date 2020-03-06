@@ -1,25 +1,23 @@
 <?php 
 
 	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
-	require("Exception.php");
-	require("PHPMailer.php");
-	require("SMTP.php");
+
+	require $_SERVER['DOCUMENT_ROOT'] . '/mail/Exception.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/mail/PHPMailer.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
 	require("config/connect.php");
 	include("config/auto-id.php");
-	//require 'vendor/autoload.php';
-	$mail = new PHPMailer();
+	$mail = new PHPMailer;
 	$mail->SMTPDebug=false;
-	//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-	$mail->isSMTP();
-	$mail->Host       = 'mail.smtp2go.com';
-	$mail->SMTPAuth   =  true;
-	$mail->Username   = 'noreply.sarkyamal@gmail.com';
-	$mail->Password   = 'M2FzMHZ0MzgzaTMw';
-	$mail->SMTPSecure = 'tls';
-	$mail->Port       =  "2525";
-	
+	$mail->isSMTP(); 
+	$mail->SMTPDebug = 0; 
+	$mail->Host = "smtp.gmail.com"; 
+	$mail->Port = 587; 
+	$mail->SMTPSecure = 'tls'; 
+	$mail->SMTPAuth = true;
+	$mail->Username = 'noreply.sarkyamal@gmail.com'; 
+	$mail->Password = 'thebestytucanteen4ever'; 
 	$mailsent = 0;
     
 
@@ -52,7 +50,7 @@
 
 					if($run) {   
 						$mail->setFrom('noreply.sarkyamal@gmail.com', 'Sar Kya Mal');
-						$mail->addAddress($email);
+						$mail->addAddress($email, $user_name);
 						$mail->isHTML(true);
 						$mail->Subject = 'Signup | Verification';
 						$mail->Body = '<br />
@@ -69,6 +67,13 @@
                     	http://34.87.196.86//sarkyamal/verify.php?email=' . $email . '&hash=' . $hash . '<br />
                     	<br />
 							 ';
+						$mail->SMTPOptions = array(
+											'ssl' => array(
+											'verify_peer' => false,
+											'verify_peer_name' => false,
+											'allow_self_signed' => true
+														  )
+												   );	 
 							 
 						if(!$mail->send()){
 							$msg = "Something went wrong. Please try again.";
