@@ -1,25 +1,24 @@
 <?php 
 
 	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
-	require("Exception.php");
-	require("PHPMailer.php");
-	require("SMTP.php");
+
+	require $_SERVER['DOCUMENT_ROOT'] . '/mail/Exception.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/mail/PHPMailer.php';
+	require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
 	require("config/connect.php");
 	
-	//require 'vendor/autoload.php';
-	$mail = new PHPMailer();
-	 $mail->SMTPDebug=false;
-	//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-	$mail->isSMTP();
-	$mail->Host       = 'mail.smtp2go.com';
-	$mail->SMTPAuth   =  true;
-	$mail->Username   = 'noreply.sarkyamal@gmail.com';
-	$mail->Password   = 'M2FzMHZ0MzgzaTMw';
-	$mail->SMTPSecure = 'tls';
-    $mail->Port       =  "2525";
-    
+	$mail = new PHPMailer;
+	$mail->SMTPDebug=false;
+	$mail->isSMTP(); 
+	$mail->SMTPDebug = 0; 
+	$mail->Host = "smtp.gmail.com"; 
+	$mail->Port = 587; 
+	$mail->SMTPSecure = 'tls'; 
+	$mail->SMTPAuth = true;
+	$mail->Username = 'noreply.sarkyamal@gmail.com'; 
+	$mail->Password = 'thebestytucanteen4ever'; 
+	$mailsent = 0;
 
 	if(isset($_POST['password']) && !empty($_POST['password'])) 
 	{
@@ -52,7 +51,14 @@
                     	------------------------<br />
                    	 	<br />
                     	<br />
-               	    '; 
+					   '; 
+					   $mail->SMTPOptions = array(
+						'ssl' => array(
+						'verify_peer' => false,
+						'verify_peer_name' => false,
+						'allow_self_signed' => true
+									  )
+							   );
                        if(!$mail->send())
                        {
                            echo "Something went worng.";
