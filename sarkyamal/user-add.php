@@ -64,7 +64,7 @@
                     	------------------------<br />
                    	 	<br />
                     	Please click this link to activate your account:<br />
-                    	https://sarkyamal.000webhostapp.com//verify.php?email=' . $email . '&hash=' . $hash . '<br />
+                    	https://sarkyamal.000webhostapp.com/verify.php?email=' . $email . '&hash=' . $hash . '<br />
                     	<br />
 							 ';
 						$mail->SMTPOptions = array(
