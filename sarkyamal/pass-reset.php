@@ -2,7 +2,6 @@
 
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
-
 	require $_SERVER['DOCUMENT_ROOT'] . '/mail/Exception.php';
 	require $_SERVER['DOCUMENT_ROOT'] . '/mail/PHPMailer.php';
 	require $_SERVER['DOCUMENT_ROOT'] . '/mail/SMTP.php';
@@ -18,7 +17,9 @@
 	$mail->SMTPAuth = true;
 	$mail->Username = 'noreply.sarkyamal@gmail.com'; 
 	$mail->Password = 'thebestytucanteen4ever'; 
-	$mailsent = 0;
+
+	
+   $mailsent=0; 
 
 	if(isset($_POST['password']) && !empty($_POST['password'])) 
 	{
@@ -27,7 +28,7 @@
 
 		if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{6,20}$/', $password))
         {
-        	echo "the password does not meet the requirements!";
+        	$msg = "the password does not meet the requirements!";
         }
         else
         {  
@@ -58,14 +59,15 @@
 						'verify_peer_name' => false,
 						'allow_self_signed' => true
 									  )
-							   );
+							   );	 
                        if(!$mail->send())
                        {
-                           echo "Something went worng.";
+                           $msg = "Something went worng.";
                        }
                        else
                        {
-                           echo "An resetted password is sent to your email.";
+									$msg = "An resetted password is sent to your email.";
+									$mailsent=1;
                        }
                 } 
 
@@ -80,10 +82,23 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="imgs/favicon.ico" type="image/ico">
 	<title>Info</title>
 </head>
 <body>
-	
-	
+<section id="body">
+   <?php include('nav.php'); ?>
+   
+   <div id="page-title">
+		<?php if($mailsent===1): ?>
+		<h2>Success!</h2>
+		<a href="login.php">Login Here.</a> 
+		<?php else:?>
+		<h2>:(</h2>
+		<?php endif; ?>
+		<?php echo $msg; ?>
+		<a href="index.php">Go back to home.</a>
+   </div>
+</section>
 </body>
 </html>

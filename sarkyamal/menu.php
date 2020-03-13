@@ -15,6 +15,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="imgs/favicon.ico" type="image/ico">
    <title><?php echo $data['menu_name'];?></title>
 </head>
 <body>
@@ -29,16 +30,10 @@
          <h2><?php echo $data['menu_name'];?></h2> 
          Type: <?php echo $data['menu_type'];?>
       </div>
-
-      <div class="search-bar">
-         <form name="search" action="restaurants.php" method="post">
-            <input type="text" placeholder="search for menu" name="keyword">
-            <input class="hidden-button" typt="submit" value="search">
-         </form> 
-      </div>
-
+     
       <div class="content">
-         <h3>Available Menus</h3>
+         <hr>
+         <h3>Available from</h3>
          <?php 
             $id = $_REQUEST['mid'];
             $sql="SELECT * FROM restaurants, restaurant_menu, menus WHERE menus.menu_id='$id' AND restaurants.restaurant_id=restaurant_menu.restaurant_id AND menus.menu_id=restaurant_menu.menu_id";
@@ -54,14 +49,5 @@
          <?php endfor; ?>
       </div>
    </section>
-
-<script>
-   document.onkeydown=function(evt) {
-      var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
-      if(keyCode == 13) {
-         document.search.submit();
-      }
-   }
-</script>
 </body>
 </html>

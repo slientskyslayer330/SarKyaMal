@@ -5,10 +5,11 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="config/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="config/style.css" type="text/css">
    
-   <link rel="stylesheet" href="config/bootstrap.min.css">
-   <link rel="stylesheet" href="config/style.css">
-   <link rel="stylesheet" href="fonts/BillionaireMediumGrunge.otf">
+   
 </head>
 <body>
    <section id="topbar">
@@ -28,12 +29,11 @@
             <a href="index.php" id="first-nav">Home</a>
             <a href="restaurants.php">Restuarants</a>
             <a href="menus.php">Menus</a>
-            <a href="#">Location Guide</a>
-            <a href="aboutus.php">About Us</a>
             <?php if(isset($_SESSION['user_id'])){ ?>
                <a href="profile.php">Profile</a>
                <a href="order-history.php">Order History</a>
             <?php } ?>
+            <a href="aboutus.php">About Us</a>
             <div id="bottom-nav">
             <?php if(!isset($_SESSION['user_id'])){ ?>
                <a href="login.php" class="button-link">Login</a>
@@ -41,6 +41,10 @@
             <?php } else { ?>
                <a href="logout.php" class="button-link focus-button">Log out</a>
             <?php } ?>
+            </div>
+            <div id="footer">
+               &copy; 2020 SarKyaMal | All rights reserved. <br>
+               &diams;&nbsp;&nbsp;Developed by Team F
             </div>
          </nav>
       </div>

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="imgs/favicon.ico" type="image/ico">
     <title>Verified</title>
     
 </head>
 <body>
-<section id="body">
+<section id="body">x2
    <?php include('nav.php'); ?>
    
     <div id="page-title">

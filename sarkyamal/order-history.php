@@ -6,6 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    
    <title>Order History</title>
+   <link rel="icon" href="imgs/favicon.ico" type="image/ico">
 </head>
 <body>
    <?php 
@@ -28,9 +29,14 @@
 
 <section id="body"> 
    <div id="page-title">
-      <div id="profile" class="display-inline-block width70">
-         <img id="profilepic" style="display: inline-block; width: 40px; border-radius: 100%; margin-right: 10px;" src="profiles/default-profile.jpg" alt="profile" >
-         <h4 class="display-inline-block">@<?php echo $data_user['user_name'];?></h4>
+      <div class="row">
+         <div id="profile" class="display-inline-block width50">
+            <img id="profilepic" style="display: inline-block; width: 40px; border-radius: 100%; margin-right: 10px;" src="<?php echo $data_user['profile'];?>" alt="profile" >
+            <h4 class="display-inline-block">@<?php echo $data_user['user_name'];?></h4> &emsp;
+         </div>
+         <div class="display-inline-block width50">
+            <p style="margin-top: 10px;">Balance: <?php echo $data_user['balance']; ?> Ks</p>
+         </div>
       </div>
    </div>
 
@@ -43,16 +49,17 @@
          for ($i=0; $i < $count; $i++) : 
             $data_order=mysqli_fetch_array($select_order);
       ?>
-      <div>
+      <div class="history-box">
          <div class="row">
-            <p style="width: 50%;"><a href="#"><?php echo $data_order['order_id'];?> </a></p>
-            <p style="width: 50%;"><?php echo substr($data_order['date'], 0, 10);?> </p>
+            <p style="width: 50%;">
+               ID: <a href="history-detail.php?orderid=<?php echo $data_order['order_id'];?>"><?php echo $data_order['order_id'];?> </a>
+            </p>
+            <p style="width: 50%;">Date: <?php echo substr($data_order['date'], 0, 10);?> </p>
          </div>
          <div class="row">
             <p style="width: 50%;">Amouont: <?php echo $data_order['total'];?> Ks</p>
-            <p style="width: 50%;"><?php echo $data_order['status'];?> </p>
+            <p style="width: 50%;">Status: <?php echo $data_order['status'];?> </p>
          </div>
-         <hr>
       </div>
       <?php endfor; ?>
    </div> 

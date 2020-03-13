@@ -1,2 +1,0 @@
-# SarKyaMal
-School Project

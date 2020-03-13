@@ -2,10 +2,6 @@
 	include("config/connect.php");
 	include("config/authenticate.php");
 
-	if(isset($_POST['order'])) {
-
-	}
-
    if(isset($_POST['room'])) {
       $room=$_POST['room'];
 	}
@@ -13,7 +9,7 @@
 	$order_id=$_POST['order_id'];
 	$user_id=$_SESSION['user_id'];
 	$total=$_POST['total'];
-	$status="pending";
+	$status="ongoing";
 
 	$sql="SELECT balance FROM users WHERE user_id='$user_id'";
 	$select=mysqli_query($conn, $sql);

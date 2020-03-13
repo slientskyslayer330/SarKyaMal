@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
+   <link rel="icon" href="imgs/favicon.ico" type="image/ico">
    <title>Profile</title>
 </head>
 <body>
@@ -29,10 +29,9 @@
 <section id="body"> 
    <div id="page-title">
       <div id="profile" class="display-inline-block width70">
-         <img id="profilepic" style="display: inline-block; width: 40px; border-radius: 100%; margin-right: 10px;" src="profiles/default-profile.jpg" alt="profile" >
+         <img id="profilepic" style="display: inline-block; width: 40px; border-radius: 100%; margin-right: 10px;" src="<?php echo $data['profile'];?>" alt="profile" >
          <h4 class="display-inline-block">@<?php echo $data['user_name'];?></h4>
       </div>
-      <a href="edit-profile.php"><small>Edit your profile</small></a> <br>
    </div>
 
    <div class="content">

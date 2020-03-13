@@ -6,6 +6,6 @@
 					alert('Please login first to perform this action.'); 
 					window.location.assign('login.php');
 				</script>";
-		
+		exit();
 	} 
 ?> 
