@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `admins`
 --
-
+xamp
 CREATE TABLE `admins` (
   `admin_id` int(11) NOT NULL,
   `admin_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -81,7 +81,7 @@ INSERT INTO `menus` (`menu_id`, `menu_name`, `menu_type`, `availability`, `photo
 ('M025', 'Celery Fried Rice', 'Main Dish', 0, ''),
 ('M026', 'Kong Baung Rice', 'Main Dish', 0, ''),
 ('M027', 'Spicy Sour Rice', 'Main Dish', 0, ''),
-('M028', 'Sweet Sour Rice', 'Main Dish', 0, ''),
+('M028', 'Sweet Sour Rice', 'Main Dish', 0, '')
 ('M029', 'Sweet Sour Fries', 'Main Dish', 0, ''),
 ('M030', 'Kong Baung Kyee Kyaw', 'Main Dish', 0, ''),
 ('M031', 'Tauk Tauk Fries', 'Main Dish', 0, ''),
