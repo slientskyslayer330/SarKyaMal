@@ -16,8 +16,8 @@
 	$mail->Port = 587; 
 	$mail->SMTPSecure = 'tls'; 
 	$mail->SMTPAuth = true;
-	$mail->Username = 'noreply.sarkyamal@gmail.com'; 
-	$mail->Password = 'thebestytucanteen4ever'; 
+	$mail->Username = 'yourusername@gmail.com'; 
+	$mail->Password = 'yourpassword'; 
     
 	$mailsent=0;
 
